@@ -4,7 +4,7 @@
 [ext_resource path="res://Texturas/RetanguloArredondado.png" type="Texture" id=2]
 [ext_resource path="res://Texturas/Mola.png" type="Texture" id=3]
 
-[sub_resource type="PhysicsMaterial" id=3]
+[sub_resource type="PhysicsMaterial" id=1]
 rough = true
 bounce = 0.7
 
@@ -19,7 +19,7 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 
 [node name="Fundo" type="Sprite" parent="."]
-self_modulate = Color( 0.745098, 0.772549, 0.411765, 1 )
+self_modulate = Color( 0.776471, 0.831373, 0.0823529, 1 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 2 )
 
@@ -27,7 +27,7 @@ texture = ExtResource( 2 )
 position = Vector2( -50.1403, -48.8425 )
 
 [node name="Pupila" parent="OlhoDireito" index="2"]
-physics_material_override = SubResource( 3 )
+physics_material_override = SubResource( 1 )
 
 [node name="OlhoEsquerdo" parent="." instance=ExtResource( 1 )]
 position = Vector2( 49.1137, -13.2142 )
