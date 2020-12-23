@@ -16,7 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="1JAM-Secret"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
+
+[layer_names]
+
+3d_physics/layer_1="Geral"
+3d_physics/layer_2="Olhos"
 
 [rendering]
 
