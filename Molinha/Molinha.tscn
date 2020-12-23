@@ -1,36 +1,40 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://GoogleEye/GooglyEye.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Texturas/RetanguloArredondado.png" type="Texture" id=2]
+[ext_resource path="res://Texturas/Mola.png" type="Texture" id=3]
 
-[sub_resource type="CubeMesh" id=1]
-size = Vector3( 1, 1, 1 )
+[sub_resource type="PhysicsMaterial" id=3]
+rough = true
+bounce = 0.7
 
-[sub_resource type="CapsuleShape" id=2]
-radius = 0.7
+[sub_resource type="PhysicsMaterial" id=2]
+bounce = 0.5
 
-[sub_resource type="CylinderMesh" id=3]
-top_radius = 0.3
-bottom_radius = 0.2
-height = 1.0
-radial_segments = 32
+[node name="Molinha" type="Node2D"]
 
-[node name="Molinha" type="KinematicBody"]
+[node name="Mola" type="Sprite" parent="."]
+position = Vector2( 0, 135.772 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Fundo" type="Sprite" parent="."]
+self_modulate = Color( 0.745098, 0.772549, 0.411765, 1 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 2 )
 
 [node name="OlhoDireito" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11497, 0.239011, 0.5 )
+position = Vector2( -50.1403, -48.8425 )
+
+[node name="Pupila" parent="OlhoDireito" index="2"]
+physics_material_override = SubResource( 3 )
 
 [node name="OlhoEsquerdo" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.976132, 0, 0.5 )
+position = Vector2( 49.1137, -13.2142 )
 
-[node name="Corpo" type="MeshInstance" parent="."]
-mesh = SubResource( 1 )
-material/0 = null
+[node name="Pupila" parent="OlhoEsquerdo" index="2"]
+physics_material_override = SubResource( 2 )
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.5, 0 )
-shape = SubResource( 2 )
+[editable path="OlhoDireito"]
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.948231, 0 )
-mesh = SubResource( 3 )
-material/0 = null
+[editable path="OlhoEsquerdo"]
