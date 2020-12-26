@@ -9,10 +9,12 @@
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1280.0
+margin_bottom = 2000.0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 333.584, 220.965 )
+position = Vector2( 561.327, 424.735 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 641.275, 1011.84 )
 current = true
 zoom = Vector2( 3, 3 )

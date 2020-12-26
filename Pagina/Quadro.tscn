@@ -7,6 +7,7 @@
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 2 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -18,4 +19,5 @@ build_mode = 1
 polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0 )
 script = ExtResource( 3 )
 controlPath = NodePath("../..")
+width = 3.0
 [connection signal="item_rect_changed" from="." to="StaticBody2D/CollisionPolygon2D" method="_on_control_item_rect_changed"]
