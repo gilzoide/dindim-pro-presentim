@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Texturas/paisaje artico.png" type="Texture" id=2]
+[ext_resource path="res://Pagina/QuadroBorder.gd" type="Script" id=3]
+
+[node name="Fundo" type="TextureRect"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0 )
+script = ExtResource( 3 )
+controlPath = NodePath("../..")
+[connection signal="item_rect_changed" from="." to="StaticBody2D/CollisionPolygon2D" method="_on_control_item_rect_changed"]

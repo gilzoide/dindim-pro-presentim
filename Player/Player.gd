@@ -25,4 +25,4 @@ func _physics_process(delta):
 	if direction.x != 0 or direction.y != 0:
 		direction = direction.normalized()
 		animationPlayer.play("PlayerAnimation")
-	move_and_collide(direction * linearVelocity * delta)
+	move_and_slide(direction * linearVelocity)
