@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RetanguloArredondado.png-b8e0f02684cf3e5ad3fb886775a23c97.stex"
+path="res://.import/Circle.svg-4973a82e8af934b310d96c2d5f321835.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texturas/RetanguloArredondado.png"
-dest_files=[ "res://.import/RetanguloArredondado.png-b8e0f02684cf3e5ad3fb886775a23c97.stex" ]
+source_file="res://Texturas/Circle.svg"
+dest_files=[ "res://.import/Circle.svg-4973a82e8af934b310d96c2d5f321835.stex" ]
 
 [params]
 

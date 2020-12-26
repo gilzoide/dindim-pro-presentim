@@ -2,12 +2,12 @@
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Molinha/Molinha.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Texturas/Circle.png" type="Texture" id=3]
+[ext_resource path="res://Texturas/Circle.svg" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 107.019, 152.225 )
+extents = Vector2( 102.498, 153.398 )
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=3]
 resource_name = "PlayerAnimation"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Molinha:position")
@@ -27,8 +27,8 @@ script = ExtResource( 1 )
 
 [node name="Sombra" type="Sprite" parent="."]
 self_modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 0, 181.2 )
-scale = Vector2( 1, 0.5 )
+position = Vector2( 0, 186 )
+scale = Vector2( 2, 0.7 )
 texture = ExtResource( 3 )
 
 [node name="Molinha" parent="." instance=ExtResource( 2 )]
@@ -39,4 +39,4 @@ shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 2.1
-anims/PlayerAnimation = SubResource( 1 )
+anims/PlayerAnimation = SubResource( 3 )
