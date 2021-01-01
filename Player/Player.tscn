@@ -4,10 +4,10 @@
 [ext_resource path="res://Molinha/Molinha.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Texturas/Circle.svg" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 102.498, 158.257 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "PlayerAnimation"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Molinha:position")
@@ -23,6 +23,7 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D"]
+collision_mask = 4
 script = ExtResource( 1 )
 linearVelocity = 200.0
 
@@ -36,8 +37,8 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 56.021 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 2.1
-anims/PlayerAnimation = SubResource( 3 )
+anims/PlayerAnimation = SubResource( 2 )

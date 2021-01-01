@@ -61,8 +61,10 @@ move_right={
 
 [layer_names]
 
-3d_physics/layer_1="Geral"
-3d_physics/layer_2="Olhos"
+2d_physics/layer_1="Jogador"
+2d_physics/layer_2="Olhos"
+2d_physics/layer_3="Inimigos"
+2d_physics/layer_4="Paredes"
 
 [rendering]
 

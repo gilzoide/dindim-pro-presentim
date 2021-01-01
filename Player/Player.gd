@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+const INIMIGO_LAYER_BIT = 2
+
 export var linearVelocity: float = 100
 var direction = Vector2.ZERO
 
@@ -26,3 +28,8 @@ func _physics_process(delta):
 		direction = direction.normalized()
 		animationPlayer.play("PlayerAnimation")
 	move_and_slide(direction * linearVelocity)
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider.get_collision_layer_bit(INIMIGO_LAYER_BIT):
+			print_debug("TROMBOU")
+			break
