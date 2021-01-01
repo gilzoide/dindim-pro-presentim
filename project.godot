@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Resource",
+"class": "Score",
+"language": "GDScript",
+"path": "res://Player/Score.gd"
+} ]
 _global_script_class_icons={
-
+"Score": ""
 }
 
 [application]
@@ -65,6 +70,7 @@ move_right={
 2d_physics/layer_2="Olhos"
 2d_physics/layer_3="Inimigos"
 2d_physics/layer_4="Paredes"
+2d_physics/layer_5="FimDaPagina"
 
 [rendering]
 

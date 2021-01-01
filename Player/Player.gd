@@ -10,7 +10,7 @@ onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 func _ready():
 	set_physics_process(true)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_pressed("move_up"):
 		direction.y = -1
 	elif Input.is_action_pressed("move_down"):
@@ -27,7 +27,7 @@ func _physics_process(delta):
 	if direction.x != 0 or direction.y != 0:
 		direction = direction.normalized()
 		animationPlayer.play("PlayerAnimation")
-	move_and_slide(direction * linearVelocity)
+	var _v = move_and_slide(direction * linearVelocity)
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		if collision.collider.get_collision_layer_bit(INIMIGO_LAYER_BIT):
