@@ -14,9 +14,10 @@ bounce = 0.5
 [node name="Molinha" type="Node2D"]
 
 [node name="Mola" type="Sprite" parent="."]
-position = Vector2( 0, 140.772 )
+position = Vector2( 0, 92 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
+offset = Vector2( 0, 16 )
 
 [node name="Fundo" type="Sprite" parent="."]
 self_modulate = Color( 0.823529, 0.886275, 0, 1 )
@@ -26,13 +27,13 @@ texture = ExtResource( 2 )
 [node name="OlhoDireito" parent="." instance=ExtResource( 1 )]
 position = Vector2( -50.1403, -48.8425 )
 
-[node name="Pupila" parent="OlhoDireito" index="2"]
+[node name="Pupila" parent="OlhoDireito" index="5"]
 physics_material_override = SubResource( 1 )
 
 [node name="OlhoEsquerdo" parent="." instance=ExtResource( 1 )]
 position = Vector2( 49.1137, -13.2142 )
 
-[node name="Pupila" parent="OlhoEsquerdo" index="2"]
+[node name="Pupila" parent="OlhoEsquerdo" index="5"]
 physics_material_override = SubResource( 2 )
 
 [editable path="OlhoDireito"]
