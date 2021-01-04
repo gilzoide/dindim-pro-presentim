@@ -6,6 +6,7 @@ export(Resource) var score
 export(float) var linearVelocity: float = 100
 var direction = Vector2.ZERO
 var pulando = false
+var blinking = false
 
 onready var animationPlayer : AnimationPlayer = $AnimationPlayer
 onready var damageAnimationPlayer : AnimationPlayer = $DamageAnimationPlayer
@@ -46,14 +47,16 @@ func _physics_process(_delta):
 func _on_Inimigo_collision(inimgo):
 	score.points -= inimgo.damage
 	set_collision_mask_bit(INIMIGO_LAYER_BIT, false)
+	blinking = true
 	damageAnimationPlayer.play("Blink")
 
 func _blink_ended():
-	set_collision_mask_bit(INIMIGO_LAYER_BIT, true)
+	blinking = false
+	set_collision_mask_bit(INIMIGO_LAYER_BIT, not pulando)
 
 func _pulo_started():
 	set_collision_mask_bit(INIMIGO_LAYER_BIT, false)
 	
 func _pulo_ended():
-	set_collision_mask_bit(INIMIGO_LAYER_BIT, true)
+	set_collision_mask_bit(INIMIGO_LAYER_BIT, not blinking)
 	pulando = false
