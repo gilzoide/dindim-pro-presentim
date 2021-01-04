@@ -4,14 +4,13 @@
 [ext_resource path="res://Player/Dindim/Dindim.gd" type="Script" id=2]
 [ext_resource path="res://Player/Dindim/GameplayScore.tres" type="Resource" id=3]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 64 )
 
 [node name="Moeda4" type="Area2D"]
 collision_layer = 32
 script = ExtResource( 2 )
+points = 8.0
 score = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
