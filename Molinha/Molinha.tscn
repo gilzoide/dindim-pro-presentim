@@ -27,13 +27,13 @@ texture = ExtResource( 2 )
 [node name="OlhoDireito" parent="." instance=ExtResource( 1 )]
 position = Vector2( -50.1403, -48.8425 )
 
-[node name="Pupila" parent="OlhoDireito" index="5"]
+[node name="Pupila" parent="OlhoDireito" index="2"]
 physics_material_override = SubResource( 1 )
 
 [node name="OlhoEsquerdo" parent="." instance=ExtResource( 1 )]
 position = Vector2( 49.1137, -13.2142 )
 
-[node name="Pupila" parent="OlhoEsquerdo" index="5"]
+[node name="Pupila" parent="OlhoEsquerdo" index="2"]
 physics_material_override = SubResource( 2 )
 
 [editable path="OlhoDireito"]
