@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export(Vector2) var direction: Vector2 = Vector2(1, 1)
 export(float) var speed = 200
+export(float) var damage = 10
 onready var sprite: AnimatedSprite = $AnimatedSprite
 
 func _ready():

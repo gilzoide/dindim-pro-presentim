@@ -1,23 +1,67 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://UI/PageTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Player/HUD.gd" type="Script" id=2]
 
+[sub_resource type="Animation" id=1]
+resource_name = "MostraUpdate"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("UpdateLabel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 16, 0 ), Vector2( 16, 63 ), Vector2( 16, 63 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("UpdateLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="HUD" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+plus_color = Color( 0.219608, 1, 0, 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 105.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 1280.0
 margin_bottom = 53.0
-theme = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "$ 50"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="UpdateLabel" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 16.0
+margin_right = 1280.0
+margin_bottom = 90.0001
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = " +50"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/MostraUpdate = SubResource( 1 )

@@ -2,11 +2,13 @@ extends KinematicBody2D
 
 const INIMIGO_LAYER_BIT = 2
 
-export var linearVelocity: float = 100
+export(Resource) var score
+export(float) var linearVelocity: float = 100
 var direction = Vector2.ZERO
 var pulando = false
 
-onready var animationPlayer: AnimationPlayer = $AnimationPlayer
+onready var animationPlayer : AnimationPlayer = $AnimationPlayer
+onready var damageAnimationPlayer : AnimationPlayer = $DamageAnimationPlayer
 
 func _ready():
 	set_physics_process(true)
@@ -38,8 +40,16 @@ func _physics_process(_delta):
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		if collision.collider.get_collision_layer_bit(INIMIGO_LAYER_BIT):
-			print_debug("TROMBOU")
+			_on_Inimigo_collision(collision.collider)
 			break
+
+func _on_Inimigo_collision(inimgo):
+	score.points -= inimgo.damage
+	set_collision_mask_bit(INIMIGO_LAYER_BIT, false)
+	damageAnimationPlayer.play("Blink")
+
+func _blink_ended():
+	set_collision_mask_bit(INIMIGO_LAYER_BIT, true)
 
 func _pulo_started():
 	set_collision_mask_bit(INIMIGO_LAYER_BIT, false)
