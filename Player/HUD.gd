@@ -2,7 +2,8 @@ extends Control
 
 export(Resource) var score
 export(String) var score_format = "$ %d"
-export(String) var update_score_format = " %+d"
+export(String) var plus_score_format = " %+d"
+export(String) var minus_score_format = "  %d"
 export(Color) var plus_color = Color.greenyellow
 export(Color) var minus_color = Color.red
 
@@ -21,6 +22,11 @@ func update_score(value):
 func _on_Score_points_changed(new_value, old_value):
 	update_score(new_value)
 	var delta = new_value - old_value
-	update_label.text = update_score_format % delta
-	update_label.self_modulate = minus_color if delta < 0 else plus_color
+	animation_player.stop()
+	if delta < 0:
+		update_label.text = minus_score_format % delta
+		update_label.self_modulate = minus_color
+	else:
+		update_label.text = plus_score_format % delta
+		update_label.self_modulate = plus_color
 	animation_player.play("MostraUpdate")
