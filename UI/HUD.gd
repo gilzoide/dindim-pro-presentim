@@ -8,7 +8,7 @@ export(Color) var plus_color = Color.greenyellow
 export(Color) var minus_color = Color.red
 
 onready var score_label : Label = $Label
-onready var update_label : Label = $UpdateLabel
+onready var update_label : Label = $Label/UpdateLabel
 onready var animation_player : AnimationPlayer = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
