@@ -10,6 +10,7 @@
 [ ] Inimigo que persegue
 [ ] Inimigo que anda random
 [ ] ? Controle com mouse
+[ ] Passar de fase
 
 ## SFX
 [ ] Música de menu (pode ser mais de boas)
