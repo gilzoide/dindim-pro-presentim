@@ -14,11 +14,6 @@ onready var damageAnimationPlayer : AnimationPlayer = $DamageAnimationPlayer
 func _ready():
 	set_physics_process(true)
 
-func _input(event):
-	if event.is_action_pressed("pulo") and not pulando:
-		pulando = true
-		animationPlayer.play("Pulando")
-
 func _physics_process(_delta):
 	if Input.is_action_pressed("move_up"):
 		direction.y = -1
@@ -33,6 +28,11 @@ func _physics_process(_delta):
 		direction.x = 1
 	else:
 		direction.x = 0
+	
+	if Input.is_action_pressed("pulo") and not pulando:
+		pulando = true
+		animationPlayer.play("Pulando")
+		
 	if direction.x != 0 or direction.y != 0:
 		direction = direction.normalized()
 		if not pulando:
