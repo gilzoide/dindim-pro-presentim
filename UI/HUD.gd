@@ -13,20 +13,20 @@ onready var animation_player : AnimationPlayer = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	score.connect("points_changed", self, "_on_Score_points_changed")
-	update_score(score.points)
+    score.connect("points_changed", self, "_on_Score_points_changed")
+    update_score(score.points)
 
 func update_score(value):
-	score_label.text = score_format % value
+    score_label.text = score_format % value
 
 func _on_Score_points_changed(new_value, old_value):
-	update_score(new_value)
-	var delta = new_value - old_value
-	animation_player.stop()
-	if delta < 0:
-		update_label.text = minus_score_format % delta
-		update_label.self_modulate = minus_color
-	else:
-		update_label.text = plus_score_format % delta
-		update_label.self_modulate = plus_color
-	animation_player.play("MostraUpdate")
+    update_score(new_value)
+    var delta = new_value - old_value
+    animation_player.stop()
+    if delta < 0:
+        update_label.text = minus_score_format % delta
+        update_label.self_modulate = minus_color
+    else:
+        update_label.text = plus_score_format % delta
+        update_label.self_modulate = plus_color
+    animation_player.play("MostraUpdate")
