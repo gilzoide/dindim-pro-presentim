@@ -9,14 +9,7 @@
 [ext_resource path="res://Player/Dindim/Moeda4.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Texturas/cruise-ship.png" type="Texture" id=8]
 [ext_resource path="res://Inimigos/DogRun.tscn" type="PackedScene" id=9]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 1, 1, 1, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0, 0, 0, 1 )
+[ext_resource path="res://Pagina/CaixaTexto.tscn" type="PackedScene" id=10]
 
 [node name="Pagina1" type="Control"]
 anchor_right = 1.0
@@ -35,63 +28,35 @@ margin_top = 64.0
 margin_right = 1163.0
 margin_bottom = 874.0
 
-[node name="Panel" type="Panel" parent="Quadro1"]
+[node name="CaixaTexto" parent="Quadro1" instance=ExtResource( 10 )]
 margin_left = 24.0
-margin_top = 19.0
-margin_right = 583.0
-margin_bottom = 100.0
-custom_styles/panel = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Quadro1/Panel"]
-modulate = Color( 0, 0, 0, 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
+margin_top = 24.0
+margin_right = 596.0
+margin_bottom = 81.0
 text = "OLARS, BORA JOGAR?"
-align = 1
-valign = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Quadro2" parent="." instance=ExtResource( 1 )]
-margin_left = 457.755
-margin_top = 992.061
-margin_right = 1203.76
-margin_bottom = 1802.06
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -880.0
+margin_top = -955.0
+margin_right = -32.0
+margin_bottom = -32.0
 texture = ExtResource( 8 )
 expand = false
 stretch_mode = 6
 
-[node name="Panel" type="Panel" parent="Quadro2"]
-margin_left = 24.0
-margin_top = 19.0
-margin_right = 583.0
-margin_bottom = 100.0
-custom_styles/panel = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Quadro2/Panel"]
-modulate = Color( 0, 0, 0, 1 )
+[node name="CaixaTexto2" parent="Quadro2" instance=ExtResource( 10 )]
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 16.0
-margin_top = 10.0
-margin_right = -16.0
-margin_bottom = -10.0
-text = "COM CERTEZA!"
-valign = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = -524.0
+margin_top = 24.0
+margin_right = -24.0
+margin_bottom = 81.0
+text = "OPA, COM CERTEZA!"
+align = 2
 
 [node name="LazyMosquito" parent="." instance=ExtResource( 3 )]
 position = Vector2( 654.064, 727.795 )
