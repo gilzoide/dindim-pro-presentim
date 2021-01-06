@@ -8,7 +8,7 @@
 [ ] Fases (pelo menos umas 5 páginas)
 [X] Inimigo que anda em percurso fixo
 [ ] Inimigo que persegue
-[ ] Inimigo que anda random
+[X] Inimigo que anda random
 [ ] ? Controle com mouse
 [ ] Passar de fase
 

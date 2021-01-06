@@ -15,7 +15,7 @@ func _ready():
 			assert(parent, "BordaDeControl não é descendente de Nós Control!!!")
 			parent = get_parent()
 		control = parent
-			
+	var _err = control.connect("item_rect_changed", self, "_on_control_item_rect_changed")
 	update_polygon()
 
 func _draw():
