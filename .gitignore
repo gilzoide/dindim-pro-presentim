@@ -19,3 +19,5 @@ data_*/
 
 # Texturas baixadas mas ainda não utilizadas
 Texturas/untracked/
+
+build/
