@@ -15,6 +15,7 @@ var page_right : Control = null
 func _ready():
     assert(pages.size() % 2 == 0, "Número de páginas deve ser par!!!")
     page_left = pages.pop_front().instance()
+    page_left.connect("pula_pagina", self, "_pula_pagina")
     page_holder_left.add_child(page_left)
     player.global_position = page_left.player_position.global_position
 
@@ -22,8 +23,8 @@ func _ready():
     page_holder_right.add_child(page_right)
     page_right.connect("pula_pagina", self, "_pula_pagina")
 
-#    yield(get_tree().create_timer(1), "timeout")
-#    _pula_pagina()
+    yield(get_tree().create_timer(1), "timeout")
+    _pula_pagina()
 
 func _pula_pagina():
     # Fade Out das páginas atuais
@@ -40,13 +41,13 @@ func _pula_pagina():
 
     # Cria as novas e Fade In
     page_left = pages.pop_front().instance()
-    page_holder_left.add_child(page_left)
     page_left.connect("pula_pagina", self, "_pula_pagina")
+    page_holder_left.add_child(page_left)
     tween.interpolate_property(page_left, "modulate:a", 0, 1, turn_duration)
 
     page_right = pages.pop_front().instance()
-    page_holder_right.add_child(page_right)
     page_right.connect("pula_pagina", self, "_pula_pagina")
+    page_holder_right.add_child(page_right)
     tween.interpolate_property(page_right, "modulate:a", 0, 1, turn_duration)
 
     tween.start()
