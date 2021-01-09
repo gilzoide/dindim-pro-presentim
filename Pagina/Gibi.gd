@@ -34,8 +34,7 @@ func _ready():
 #    _pula_pagina()
 
 func _pula_pagina():
-    if current_page == 0:
-        on_restart()
+    var restarting = current_page == 0
 
     # Fade Out das páginas atuais
     tween.interpolate_property(page_left, "modulate:a", 1, 0, turn_duration)
@@ -65,6 +64,8 @@ func _pula_pagina():
 
     if current_page == 0:
         on_gameover()
+    elif restarting:
+        on_restart()
 
     tween.start()
 
@@ -72,7 +73,7 @@ func on_gameover():
     score.paused = true
 
 func on_restart():
-    if page_left.player_position:
-        player.global_position = page_left.player_position.global_position
     score.reset()
     hud.reset()
+    if page_left.player_position:
+        player.global_position = page_left.player_position.global_position
