@@ -60,6 +60,9 @@ position = Vector2( 900.544, 508.542 )
 [node name="Urso3" parent="FundoPagina/QuadroGeleira" instance=ExtResource( 6 )]
 position = Vector2( 550.731, 303.364 )
 
+[node name="Urso4" parent="FundoPagina/QuadroGeleira" instance=ExtResource( 6 )]
+position = Vector2( 835.836, 166.423 )
+
 [node name="Moeda" parent="FundoPagina/QuadroGeleira" instance=ExtResource( 7 )]
 position = Vector2( 1052.55, 812.002 )
 value = 7
