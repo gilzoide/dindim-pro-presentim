@@ -34,8 +34,7 @@ collision_layer = 16
 controlPath = NodePath("..")
 
 [node name="PageHolderLeft" type="Control" parent="."]
-margin_left = -1264.0
-margin_right = 16.0
+margin_left = -1280.0
 margin_bottom = 2000.0
 __meta__ = {
 "_edit_use_anchors_": false
