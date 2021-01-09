@@ -1,9 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Pagina/BordaDeControl.gd" type="Script" id=1]
-[ext_resource path="res://UI/PageTheme.tres" type="Theme" id=2]
+[ext_resource path="res://Materials/OutlineGlowMaterial.tres" type="Material" id=1]
 [ext_resource path="res://Pagina/CaixaTexto.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Pagina/CaixaTextoStylebox.tres" type="StyleBox" id=4]
 [ext_resource path="res://Pagina/BordaDeControlArea.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Pagina/Alien.gd" type="Script" id=6]
 [ext_resource path="res://Texturas/alien.png" type="Texture" id=7]
@@ -20,33 +18,24 @@ __meta__ = {
 y_variation = 32.0
 falas = [ "Colé, bão?", "Gostou da nave?", "Feliz natal! =D", "Só tenho cartão", "Bom dia!" ]
 
-[node name="BordaDeControl" type="Area2D" parent="." instance=ExtResource( 5 )]
-collision_layer = 0
-script = ExtResource( 1 )
+[node name="BordaDeControl" parent="." instance=ExtResource( 5 )]
 controlPath = NodePath("..")
-width = 0.0
 
 [node name="Sprite" type="TextureRect" parent="."]
+material = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -26.0234
+margin_top = -30.9711
 margin_right = 28.0
-margin_bottom = 3.97498
+margin_bottom = -0.969452
 texture = ExtResource( 7 )
 
-[node name="CaixaTexto2" type="Label" parent="Sprite" instance=ExtResource( 3 )]
+[node name="CaixaTexto2" parent="Sprite" instance=ExtResource( 3 )]
 margin_left = 195.0
 margin_top = -87.0
 margin_right = 721.0
 margin_bottom = -28.0
-theme = ExtResource( 2 )
-custom_styles/normal = ExtResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Colé, bão?"
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ColorRect" type="ColorRect" parent="Sprite/CaixaTexto2"]
 show_behind_parent = true
@@ -57,6 +46,4 @@ margin_top = -23.3434
 margin_right = 63.5
 margin_bottom = 16.6566
 rect_rotation = 44.9999
-[connection signal="body_entered" from="BordaDeControl" to="BordaDeControl" method="_on_Player_na_area"]
-[connection signal="body_exited" from="BordaDeControl" to="BordaDeControl" method="_on_Player_fora_da_area"]
 [connection signal="player_pulou" from="BordaDeControl" to="." method="_troca_fala"]
