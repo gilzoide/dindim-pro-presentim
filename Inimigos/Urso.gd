@@ -18,4 +18,7 @@ func _physics_process(delta):
         timer = 0
         direction = Vector2.UP.rotated(randf() * 2 * PI)
         sprite.flip_h = direction.x < 0
-    var _collision = move_and_collide(direction * speed * delta)
+    var collision = move_and_collide(direction * speed * delta)
+    if collision:
+        direction = direction.bounce(collision.normal)
+        sprite.flip_h = direction.x < 0
