@@ -8,5 +8,6 @@ script = ExtResource( 1 )
 width = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-build_mode = 1
 polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0 )
+[connection signal="body_entered" from="." to="." method="_on_Player_na_area"]
+[connection signal="body_exited" from="." to="." method="_on_Player_fora_da_area"]

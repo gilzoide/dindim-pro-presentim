@@ -1,11 +1,16 @@
 extends CollisionObject2D
 
+const PLAYER_LAYER_BIT = 0
+
 export(NodePath) var controlPath
 export(float) var width = 1
 export(Color) var color = Color.black
 
+signal player_pulou()
+
 onready var control: Control = get_node(controlPath)
 onready var collisionPolygon: CollisionPolygon2D = $CollisionPolygon2D
+var player
 
 func _ready():
     if not control:
@@ -34,3 +39,13 @@ func update_polygon():
         Vector2(size.x, size.y),
         Vector2(size.x, 0),
     ])
+
+func _on_Player_na_area(body : PhysicsBody2D) -> void:
+    if body.get_collision_layer_bit(PLAYER_LAYER_BIT):
+        player = body
+        player.connect("comecou_pular", self, "emit_signal", ["player_pulou"])
+
+func _on_Player_fora_da_area(body : PhysicsBody2D) -> void:
+    if body.get_collision_layer_bit(PLAYER_LAYER_BIT):
+        assert(player != null and player == body)
+        player.disconnect("comecou_pular", self, "emit_signal")

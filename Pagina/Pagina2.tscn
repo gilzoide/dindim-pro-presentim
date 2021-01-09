@@ -258,6 +258,4 @@ __meta__ = {
 controlPath = NodePath("../../../../../Pagina2/FundoPagina/QuadroBoraLa/PuleAqui/GlowingRect")
 
 [node name="NumeroPaginaDireita" parent="FundoPagina" instance=ExtResource( 14 )]
-[connection signal="player_pulou" from="." to="." method="_pula_pagina"]
-[connection signal="body_entered" from="FundoPagina/QuadroBoraLa/PuleAqui/BordaDeControl" to="." method="_on_Player_na_area"]
-[connection signal="body_exited" from="FundoPagina/QuadroBoraLa/PuleAqui/BordaDeControl" to="." method="_on_Player_fora_da_area"]
+[connection signal="player_pulou" from="FundoPagina/QuadroBoraLa/PuleAqui/BordaDeControl" to="." method="_pula_pagina"]

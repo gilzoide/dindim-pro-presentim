@@ -23,8 +23,8 @@ func _ready():
     page_holder_right.add_child(page_right)
     page_right.connect("pula_pagina", self, "_pula_pagina")
 
-    yield(get_tree().create_timer(1), "timeout")
-    _pula_pagina()
+#    yield(get_tree().create_timer(1), "timeout")
+#    _pula_pagina()
 
 func _pula_pagina():
     # Fade Out das páginas atuais

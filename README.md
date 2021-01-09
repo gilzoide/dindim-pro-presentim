@@ -15,3 +15,4 @@ Ajude Molinha a encontrar dinheiro para comprar o presente mais maneiro!
 - [Glitch](https://glitchthegame.com) Furniture art by Tiny Speck: https://opengameart.org/content/glitch-furniture-svg 
 - Cursed Timer ULiL font by Heaven Castro: https://www.fontspace.com/cursed-timer-ulil-font-f29411
 - Farming Tool Icons art by Calciumtrice: https://opengameart.org/content/farming-tool-icons
+- Alien art by [Carlos Alface](http://carlosalface.blogspot.pt/): https://opengameart.org/content/alien-1

@@ -1,11 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=12 format=2]
 
+[ext_resource path="res://Pagina/Quadro.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Texturas/paisaje artico.png" type="Texture" id=2]
+[ext_resource path="res://Pagina/CaixaTexto.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Pagina/FundoPagina.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Dindim/Moeda.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Inimigos/DogRun.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Texturas/untracked/sciFi_layers[small]/sci-fi-level[foreground_layer_small].png" type="Texture" id=7]
+[ext_resource path="res://Pagina/Alien.tscn" type="PackedScene" id=8]
 [ext_resource path="res://UI/PageTheme.tres" type="Theme" id=9]
 [ext_resource path="res://Pagina/NumeroPaginaDireita.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Pagina/Pagina.gd" type="Script" id=16]
 
-[node name="Pagina2" type="Control"]
+[node name="Pagina4" type="Control"]
 theme = ExtResource( 9 )
 script = ExtResource( 16 )
 __meta__ = {
@@ -16,6 +23,74 @@ __meta__ = {
 anchor_right = 0.0
 margin_right = 1280.0
 
+[node name="QuadroArtico" parent="FundoPagina" instance=ExtResource( 1 )]
+anchor_right = 1.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = 947.0
+texture = ExtResource( 2 )
+
+[node name="Moeda" parent="FundoPagina/QuadroArtico" instance=ExtResource( 5 )]
+position = Vector2( 804.181, 283.162 )
+value = 6
+
+[node name="Moeda2" parent="FundoPagina/QuadroArtico" instance=ExtResource( 5 )]
+position = Vector2( 1053.36, 405.866 )
+value = 6
+
+[node name="Moeda3" parent="FundoPagina/QuadroArtico" instance=ExtResource( 5 )]
+position = Vector2( 1053.36, 132.142 )
+value = 6
+
+[node name="CaixaTexto" parent="FundoPagina/QuadroArtico" instance=ExtResource( 3 )]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 608.0
+margin_bottom = 83.0
+text = "Nusga, que frio, cê besta"
+
+[node name="TextoBarraOuro" parent="FundoPagina/QuadroArtico" instance=ExtResource( 3 )]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -704.0
+margin_top = -251.0
+margin_right = -24.0
+margin_bottom = -24.0
+text = "Ainda bem que barras de ouro valem mais do que dinheiro
+$$
+ U"
+autowrap = true
+
+[node name="DogRun" parent="FundoPagina/QuadroArtico" instance=ExtResource( 6 )]
+position = Vector2( 217.091, 713.569 )
+
+[node name="DogRun2" parent="FundoPagina/QuadroArtico" instance=ExtResource( 6 )]
+position = Vector2( 479.488, 309.866 )
+
+[node name="DogRun3" parent="FundoPagina/QuadroArtico" instance=ExtResource( 6 )]
+position = Vector2( 900.181, 664 )
+
+[node name="Quadro" parent="FundoPagina" instance=ExtResource( 1 )]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = -1033.0
+margin_right = -32.0
+margin_bottom = -32.0
+texture = ExtResource( 7 )
+stretch_mode = 7
+flip_h = true
+
+[node name="CaixaTexto" parent="FundoPagina/Quadro" instance=ExtResource( 3 )]
+margin_left = 24.0
+margin_top = 24.0
+text = "Uai, doncotô?"
+
+[node name="Alien" parent="FundoPagina/Quadro" instance=ExtResource( 8 )]
+
 [node name="NumeroPaginaDireita" parent="FundoPagina" instance=ExtResource( 14 )]
 text = "4"
-[connection signal="player_pulou" from="." to="." method="_pula_pagina"]
