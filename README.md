@@ -1,5 +1,8 @@
-# 1JAM Secret (nome a definir)
-Jogo de amigo oculto, tomara que a pessoa goste!
+# Dindim pro presentim
+Jogo de amigo oculto feito para a [1JAM - Secreto](https://itch.io/jam/1jam-secreto), tomara que a pessoa goste!
+
+É véspera de natal e você ainda não comprou o presente para seu amigo oculto!
+Ajude Molinha a encontrar dinheiro para comprar o presente mais maneiro!
 
 
 ## Créditos

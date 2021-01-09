@@ -20,7 +20,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="1JAM-Secret"
+config/name="Dindim pro presentim"
+config/description="É véspera de natal e você ainda não comprou o presente para seu amigo oculto!
+Ajude Molinha a encontrar dinheiro para comprar o presente mais maneiro!"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
