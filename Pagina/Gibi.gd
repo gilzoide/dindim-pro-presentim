@@ -17,7 +17,8 @@ func _ready():
     page_left = pages.pop_front().instance()
     page_left.connect("pula_pagina", self, "_pula_pagina")
     page_holder_left.add_child(page_left)
-    player.global_position = page_left.player_position.global_position
+    if page_left.player_position:
+        player.global_position = page_left.player_position.global_position
 
     page_right = pages.pop_front().instance()
     page_holder_right.add_child(page_right)

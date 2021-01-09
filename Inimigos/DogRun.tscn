@@ -22,7 +22,7 @@
 [ext_resource path="res://Texturas/DogRun/rr_016.png" type="Texture" id=20]
 [ext_resource path="res://Texturas/DogRun/rr_001.png" type="Texture" id=21]
 [ext_resource path="res://Inimigos/DogRun.gd" type="Script" id=22]
-[ext_resource path="res://Materials/OutlineMaterial.tres" type="Material" id=23]
+[ext_resource path="res://Materials/OutlineClaroMaterial.tres" type="Material" id=23]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

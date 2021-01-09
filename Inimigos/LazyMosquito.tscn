@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Texturas/lazy-mosquito/LazyMosquito.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Inimigos/LazyMosquito.gd" type="Script" id=2]
-[ext_resource path="res://Materials/OutlineMaterial.tres" type="Material" id=3]
+[ext_resource path="res://Materials/OutlineClaroMaterial.tres" type="Material" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 79.1107, 55.7307 )
