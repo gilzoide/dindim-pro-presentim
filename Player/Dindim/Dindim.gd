@@ -24,10 +24,11 @@ func _ready() -> void:
 func set_value(new_value):
     value = new_value
     points = 1 << value
-    sprite.region_rect = Rect2(
-        Vector2(value * CELL_WIDTH, 0),
-        Vector2(CELL_WIDTH, CELL_WIDTH)
-    )
+    if sprite:
+        sprite.region_rect = Rect2(
+            Vector2(value * CELL_WIDTH, 0),
+            Vector2(CELL_WIDTH, CELL_WIDTH)
+        )
 
 func _on_Moeda_body_entered(body : PhysicsBody2D):
     if body.get_collision_layer_bit(JOGADOR_LAYER_BIT):

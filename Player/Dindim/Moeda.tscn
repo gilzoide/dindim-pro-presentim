@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Texturas/gold-sheet.png" type="Texture" id=1]
+[ext_resource path="res://Player/Dindim/Dindim.gd" type="Script" id=2]
+[ext_resource path="res://Player/Dindim/GameplayScore.tres" type="Resource" id=3]
+[ext_resource path="res://Outline/OutlineMaterial.tres" type="Material" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 64, 64 )
+
+[node name="Moeda" type="Area2D"]
+collision_layer = 32
+script = ExtResource( 2 )
+score = ExtResource( 3 )
+value = 4
+
+[node name="Sprite" type="Sprite" parent="."]
+material = ExtResource( 4 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 32, 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_Moeda_body_entered"]
