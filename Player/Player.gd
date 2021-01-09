@@ -4,6 +4,8 @@ const INIMIGO_LAYER_BIT = 2
 
 export(Resource) var score
 export(float) var linearVelocity: float = 100
+export(bool) var start_pulando = true
+
 var direction = Vector2.ZERO
 var pulando = false
 var blinking = false
@@ -13,6 +15,9 @@ onready var damageAnimationPlayer : AnimationPlayer = $DamageAnimationPlayer
 
 func _ready():
     set_physics_process(true)
+    if start_pulando:
+        pulando = true
+        animationPlayer.play("Pulando")
 
 func _physics_process(_delta):
     if Input.is_action_pressed("move_up"):
