@@ -1,13 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Pagina/Quadro.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Inimigos/LazyMosquito.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Texturas/glitch-furniture/furniture_armchair_orange_hand_armchair.svg" type="Texture" id=2]
+[ext_resource path="res://Player/Dindim/Moeda.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Pagina/FundoPagina.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Player/Dindim/Moeda2.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Player/Dindim/Moeda5.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Player/Dindim/Moeda4.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Texturas/cruise-ship.png" type="Texture" id=8]
-[ext_resource path="res://Inimigos/DogRun.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Texturas/glitch-furniture/furniture_armchair_purple_journey_beanbag.svg" type="Texture" id=5]
+[ext_resource path="res://Texturas/glitch-furniture/furniture_ceilingdeco_bird_cage.svg" type="Texture" id=6]
+[ext_resource path="res://Texturas/glitch-furniture/furniture_largewindow.svg" type="Texture" id=7]
 [ext_resource path="res://Pagina/CaixaTexto.tscn" type="PackedScene" id=10]
 
 [node name="Pagina1" type="Control"]
@@ -19,53 +18,129 @@ __meta__ = {
 anchor_right = 0.0
 margin_right = 1280.0
 
-[node name="Quadro1" parent="." instance=ExtResource( 1 )]
-margin_left = 83.0
-margin_top = 64.0
-margin_right = 1163.0
-margin_bottom = 874.0
+[node name="Quadro1" parent="FundoPagina" instance=ExtResource( 1 )]
+self_modulate = Color( 1, 0.968627, 0.584314, 1 )
+anchor_right = 1.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = 724.0
 
-[node name="CaixaTexto" parent="Quadro1" instance=ExtResource( 10 )]
+[node name="CaixaTexto" parent="FundoPagina/Quadro1" instance=ExtResource( 10 )]
 margin_left = 24.0
 margin_top = 24.0
-margin_right = 596.0
-margin_bottom = 81.0
-text = "OLARS, BORA JOGAR?"
+margin_right = 919.0
+margin_bottom = 83.0
+text = "Deve ter alguma grana aqui em casa"
 
-[node name="Quadro2" parent="." instance=ExtResource( 1 )]
+[node name="CadeiraMao" type="TextureRect" parent="FundoPagina/Quadro1"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 38.0
+margin_top = -263.0
+margin_right = 302.0
+margin_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Moeda" parent="FundoPagina/Quadro1/CadeiraMao" instance=ExtResource( 3 )]
+position = Vector2( 136.843, 188.011 )
+
+[node name="Sofa" type="TextureRect" parent="FundoPagina/Quadro1"]
+margin_left = 416.0
+margin_top = 278.0
+margin_right = 1169.0
+margin_bottom = 690.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Moeda5" parent="FundoPagina/Quadro1/Sofa" instance=ExtResource( 3 )]
+position = Vector2( 745.074, -286.003 )
+value = 1
+
+[node name="Lustre" type="TextureRect" parent="FundoPagina/Quadro1"]
+anchor_right = 1.0
+margin_left = 787.581
+margin_right = 47.5813
+margin_bottom = 213.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Moeda2" parent="FundoPagina/Quadro1/Lustre" instance=ExtResource( 3 )]
+position = Vector2( 209.276, 10.2461 )
+
+[node name="Moeda3" parent="FundoPagina/Quadro1/Lustre" instance=ExtResource( 3 )]
+position = Vector2( 283.969, 55.2733 )
+value = 1
+
+[node name="Moeda4" parent="FundoPagina/Quadro1/Lustre" instance=ExtResource( 3 )]
+position = Vector2( -133.86, 490.86 )
+value = 3
+
+[node name="Window1" type="TextureRect" parent="FundoPagina/Quadro1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -374.487
+margin_top = -198.456
+margin_right = -174.487
+margin_bottom = 51.5441
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="Window2" type="TextureRect" parent="FundoPagina/Quadro1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 174.227
+margin_top = -198.456
+margin_right = 374.227
+margin_bottom = 51.5441
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quadro2" parent="FundoPagina" instance=ExtResource( 1 )]
+self_modulate = Color( 0.654902, 0.843137, 0.929412, 1 )
+anchor_right = 1.0
+margin_left = 32.0
+margin_top = 752.0
+margin_right = -32.0
+margin_bottom = 1366.0
+
+[node name="CaixaTexto" parent="FundoPagina/Quadro2" instance=ExtResource( 10 )]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 358.0
+margin_bottom = 159.0
+text = "Só isso?
+Que merreca!"
+
+[node name="CaixaTexto2" parent="FundoPagina/Quadro2" instance=ExtResource( 10 )]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 405.0
-margin_top = 1062.0
-margin_right = 1232.0
-margin_bottom = 1959.0
-texture = ExtResource( 8 )
-expand = false
-stretch_mode = 6
-
-[node name="CaixaTexto2" parent="Quadro2" instance=ExtResource( 10 )]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -524.0
-margin_top = 24.0
+margin_left = -671.0
+margin_top = -83.0
 margin_right = -24.0
-margin_bottom = 81.0
-text = "OPA, COM CERTEZA!"
-align = 2
-
-[node name="LazyMosquito" parent="." instance=ExtResource( 3 )]
-position = Vector2( 654.064, 727.795 )
-
-[node name="Moeda4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 289.57, 296.862 )
-
-[node name="Moeda5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 801.991, 191.98 )
-
-[node name="Moeda2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 879.512, 795.911 )
-
-[node name="DogRun" parent="." instance=ExtResource( 9 )]
-position = Vector2( 823.988, 1453.95 )
+margin_bottom = -24.0
+text = "Aí azedou o pé do frango =("

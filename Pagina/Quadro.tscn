@@ -3,7 +3,7 @@
 [ext_resource path="res://Pagina/BordaDeControl.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Texturas/Retangulo.png" type="Texture" id=2]
 
-[node name="Fundo" type="TextureRect"]
+[node name="Quadro" type="TextureRect"]
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 2 )
