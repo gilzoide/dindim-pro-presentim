@@ -14,7 +14,11 @@ onready var animation_player : AnimationPlayer = $AnimationPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
     score.connect("points_changed", self, "_on_Score_points_changed")
-    update_score(score.points)
+    reset()
+
+func reset():
+    if score_label:
+        update_score(score.points)
 
 func update_score(value):
     score_label.text = score_format % value

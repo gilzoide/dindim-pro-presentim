@@ -57,6 +57,7 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+score = ExtResource( 3 )
 timer_format = "%.0f s"
 
 [node name="Label" type="Label" parent="."]

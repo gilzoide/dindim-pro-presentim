@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Pagina/Pagina2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Pagina/Gibi.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Pagina/Pagina6.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Pagina/PaginaGameOver1.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Pagina/PaginaGameOver2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Player/Dindim/GameplayScore.tres" type="Resource" id=12]
 
 [node name="Gibi" type="TextureRect"]
 margin_left = -16.0
@@ -23,6 +24,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+score = ExtResource( 12 )
 pages = [ ExtResource( 7 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ]
 
 [node name="BothPageExtents" type="ColorRect" parent="."]

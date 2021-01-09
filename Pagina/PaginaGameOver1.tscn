@@ -1,8 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
+[ext_resource path="res://Pagina/Resultado.gd" type="Script" id=1]
 [ext_resource path="res://Pagina/Quadro.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Pagina/CaixaTexto.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Pagina/FundoPagina.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Dindim/GameplayScore.tres" type="Resource" id=5]
+[ext_resource path="res://UI/PageDynamicFontMaior.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Pagina/PuleAqui.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UI/PageTheme.tres" type="Theme" id=9]
 [ext_resource path="res://Pagina/NumeroPaginaEsquerda.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Pagina/Pagina.gd" type="Script" id=12]
@@ -27,12 +31,22 @@ margin_top = 32.0
 margin_right = -32.0
 margin_bottom = -32.0
 
+[node name="Título" parent="FundoPagina/Quadro" instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -576.0
+margin_top = 48.0
+margin_right = 576.0
+margin_bottom = 156.0
+custom_fonts/font = ExtResource( 6 )
+text = "DINDIM PRO PRESENTIM"
+
 [node name="Resultado" parent="FundoPagina/Quadro" instance=ExtResource( 3 )]
-anchor_right = 0.974
+anchor_right = 1.0
 margin_left = 32.0
-margin_top = 32.0
-margin_right = -0.384033
-margin_bottom = 259.0
+margin_top = 368.0
+margin_right = -32.0
+margin_bottom = 873.0
 text = "Parabéns!
 
 Você coletou %d dinheiro
@@ -40,6 +54,32 @@ Em %d:%02d
 
 Já dá pra comprar um %s!"
 valign = 0
+autowrap = true
+script = ExtResource( 1 )
+score = ExtResource( 5 )
+messages_zero_points = [ "Pode mandar um abraço de presente que custa nada!" ]
+messages_points = [ "Já dá pra comprar um miojo!", "Será que dá pra comprar um Pleisteixo novo?", "Paga a pizza da ceia que tá tudo certo!", "Hmm, já cobre o pão de queijo!" ]
+
+[node name="Obrigado" parent="FundoPagina/Quadro" instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -317.0
+margin_top = -263.859
+margin_right = 318.0
+margin_bottom = -204.859
+text = "OBRIGADO POR JOGAR!!! =D"
+
+[node name="PuleAqui" parent="FundoPagina/Quadro" instance=ExtResource( 7 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -397.0
+margin_top = -147.0
+margin_right = 398.0
+text = "*pule aqui com o botão espaço ou enter para recomeçar a jornada"
+autowrap = true
+pagina_root_path = NodePath("../../..")
 
 [node name="NumeroPaginaEsquerda" parent="FundoPagina" instance=ExtResource( 11 )]
 margin_right = 61.0
