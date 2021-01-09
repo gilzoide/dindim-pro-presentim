@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Pagina/Quadro.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Pagina/CaixaTexto.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Pagina/FundoPagina.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/PageTheme.tres" type="Theme" id=9]
+[ext_resource path="res://Pagina/NumeroPaginaEsquerda.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Pagina/Pagina.gd" type="Script" id=12]
+
+[node name="PaginaGameOver1" type="Control"]
+theme = ExtResource( 9 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FundoPagina" parent="." instance=ExtResource( 4 )]
+anchor_right = 0.0
+margin_right = 1280.0
+
+[node name="Quadro" parent="FundoPagina" instance=ExtResource( 2 )]
+self_modulate = Color( 1, 0.968627, 0.584314, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = -32.0
+
+[node name="Resultado" parent="FundoPagina/Quadro" instance=ExtResource( 3 )]
+anchor_right = 0.974
+margin_left = 32.0
+margin_top = 32.0
+margin_right = -0.384033
+margin_bottom = 259.0
+text = "Parabéns!
+
+Você coletou %d dinheiro
+Em %d:%02d
+
+Já dá pra comprar um %s!"
+valign = 0
+
+[node name="NumeroPaginaEsquerda" parent="FundoPagina" instance=ExtResource( 11 )]
+margin_right = 61.0
+margin_bottom = -22.0
+text = "7"

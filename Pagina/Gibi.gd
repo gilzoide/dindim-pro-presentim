@@ -7,6 +7,7 @@ onready var page_holder_left = $PageHolderLeft
 onready var page_holder_right = $PageHolderRight
 onready var tween = $Tween
 onready var player = $Player
+onready var hud = get_node("../CanvasLayer/HUD")
 
 var page_left : Control = null
 var page_right : Control = null
