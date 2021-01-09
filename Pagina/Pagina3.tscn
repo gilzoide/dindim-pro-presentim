@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Pagina/FundoPagina.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/PageTheme.tres" type="Theme" id=9]
+[ext_resource path="res://Pagina/NumeroPaginaEsquerda.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Pagina/Pagina.gd" type="Script" id=12]
+
+[node name="Pagina3" type="Control"]
+theme = ExtResource( 9 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+player_position_path = NodePath("../Pagina3/FundoPagina/PlayerPosition2D")
+
+[node name="FundoPagina" parent="." instance=ExtResource( 4 )]
+anchor_right = 0.0
+margin_right = 1280.0
+
+[node name="PlayerPosition2D" type="Position2D" parent="FundoPagina"]
+position = Vector2( 311.28, 481.846 )
+
+[node name="NumeroPaginaEsquerda" parent="FundoPagina" instance=ExtResource( 11 )]
+text = "3"

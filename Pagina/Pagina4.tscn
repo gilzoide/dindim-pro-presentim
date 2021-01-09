@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Pagina/FundoPagina.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/PageTheme.tres" type="Theme" id=9]
+[ext_resource path="res://Pagina/NumeroPaginaDireita.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Pagina/Pagina.gd" type="Script" id=16]
+
+[node name="Pagina2" type="Control"]
+theme = ExtResource( 9 )
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FundoPagina" parent="." instance=ExtResource( 4 )]
+anchor_right = 0.0
+margin_right = 1280.0
+
+[node name="NumeroPaginaDireita" parent="FundoPagina" instance=ExtResource( 14 )]
+text = "4"
+[connection signal="player_pulou" from="." to="." method="_pula_pagina"]

@@ -22,35 +22,31 @@ func _ready():
     page_holder_right.add_child(page_right)
     page_right.connect("pula_pagina", self, "_pula_pagina")
 
+#    yield(get_tree().create_timer(1), "timeout")
+#    _pula_pagina()
+
 func _pula_pagina():
-    pass
+    # Fade Out das páginas atuais
+    tween.interpolate_property(page_left, "modulate:a", 1, 0, turn_duration)
+    tween.interpolate_property(page_right, "modulate:a", 1, 0, turn_duration)
+    tween.start()
+    yield(tween, "tween_all_completed")
 
-#    yield(get_tree().create_timer(2), "timeout")
-#    turn_page()
-#
-#func turn_page():
-#    var current_page_left = page_left
-#    page_left = pages.pop_front().instance()
-#    page_holder_left_viewport_container.rect_scale.x = 0
-#    page_holder_left_viewport.add_child(page_left)
-#
-#    var current_page_right = page_right
-#    page_right = pages.pop_front().instance()
-#    page_holder_right.add_child(page_right)
-#    page_holder_right.remove_child(current_page_right)
-#    page_holder_right_viewport.add_child(current_page_right)
-#
-#    yield(get_tree(), "idle_frame")
-#    tween.interpolate_property(page_holder_right_viewport_container, "rect_scale:x", 1, 0, turn_duration, Tween.TRANS_LINEAR, Tween.EASE_IN)
-#    tween.start()
-#    yield(tween, "tween_completed")
-#    current_page_right.queue_free()
-#
-#    yield(get_tree(), "idle_frame")
-#    tween.interpolate_property(page_holder_left_viewport_container, "rect_scale:x", 0, 1, turn_duration, Tween.TRANS_LINEAR, Tween.EASE_IN)
-#    tween.start()
-#    yield(tween, "tween_completed")
-#    current_page_left.queue_free()
-#    page_holder_left_viewport.remove_child(page_left)
-#    page_holder_left.add_child(page_left)
+    # Limpeza
+    page_left.disconnect("pula_pagina", self, "_pula_pagina")
+    page_left.queue_free()
+    page_right.disconnect("pula_pagina", self, "_pula_pagina")
+    page_right.queue_free()
 
+    # Cria as novas e Fade In
+    page_left = pages.pop_front().instance()
+    page_holder_left.add_child(page_left)
+    page_left.connect("pula_pagina", self, "_pula_pagina")
+    tween.interpolate_property(page_left, "modulate:a", 0, 1, turn_duration)
+
+    page_right = pages.pop_front().instance()
+    page_holder_right.add_child(page_right)
+    page_right.connect("pula_pagina", self, "_pula_pagina")
+    tween.interpolate_property(page_right, "modulate:a", 0, 1, turn_duration)
+
+    tween.start()

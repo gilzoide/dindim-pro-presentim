@@ -6,6 +6,7 @@ signal pula_pagina()
 signal player_pulou()
 
 export(NodePath) var player_position_path
+
 var player_position
 var player
 
