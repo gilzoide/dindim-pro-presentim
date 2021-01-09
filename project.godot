@@ -26,6 +26,10 @@ Ajude Molinha a encontrar dinheiro para comprar o presente mais maneiro!"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlowComTempo="*res://Materials/GlowComTempo.gd"
+
 [display]
 
 window/size/width=1280

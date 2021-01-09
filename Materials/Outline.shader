@@ -2,7 +2,6 @@ shader_type canvas_item;
 
 const int width = 1;
 
-uniform float alpha_fase_speed = 1;
 uniform vec4 outline_color : hint_color = vec4(1);
 
 bool maybe_outline(sampler2D tex, vec2 uv, vec2 texture_pixel_size) {
@@ -20,7 +19,6 @@ void fragment() {
     vec4 texel = texture(TEXTURE, UV);
     bool is_outline = (texel.a < 1.0) && maybe_outline(TEXTURE, UV, TEXTURE_PIXEL_SIZE);
     vec4 color = outline_color;
-    float alpha_fase = abs(sin(TIME * alpha_fase_speed));
-    color.a *= float(is_outline) * alpha_fase;
+    color.a *= float(is_outline);
     COLOR = mix(color, texel, texel.a);
 }

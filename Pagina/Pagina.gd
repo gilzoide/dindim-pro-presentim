@@ -5,7 +5,7 @@ const PLAYER_LAYER_BIT = 0
 signal pula_pagina()
 signal player_pulou()
 
-export(NodePath) var player_position_path
+export(NodePath) var player_position_path = null
 
 var player_position
 var player

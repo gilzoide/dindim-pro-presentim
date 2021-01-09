@@ -1,17 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Texturas/lazy-mosquito/LazyMosquito.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Inimigos/LazyMosquito.gd" type="Script" id=2]
+[ext_resource path="res://Materials/OutlineMaterial.tres" type="Material" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 79.1107, 55.7307 )
 
 [node name="LazyMosquito" type="KinematicBody2D"]
 collision_layer = 4
-collision_mask = 8
+collision_mask = 2147483660
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+material = ExtResource( 3 )
 frames = ExtResource( 1 )
 frame = 5
 
