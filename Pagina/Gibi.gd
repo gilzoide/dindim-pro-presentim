@@ -42,11 +42,13 @@ func _pula_pagina():
     # Cria as novas e Fade In
     page_left = pages.pop_front().instance()
     page_left.connect("pula_pagina", self, "_pula_pagina")
+    page_left.modulate.a = 0
     page_holder_left.add_child(page_left)
     tween.interpolate_property(page_left, "modulate:a", 0, 1, turn_duration)
 
     page_right = pages.pop_front().instance()
     page_right.connect("pula_pagina", self, "_pula_pagina")
+    page_right.modulate.a = 0
     page_holder_right.add_child(page_right)
     tween.interpolate_property(page_right, "modulate:a", 0, 1, turn_duration)
 

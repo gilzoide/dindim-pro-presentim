@@ -31,18 +31,6 @@ margin_right = -32.0
 margin_bottom = 947.0
 texture = ExtResource( 2 )
 
-[node name="Moeda" parent="FundoPagina/QuadroArtico" instance=ExtResource( 5 )]
-position = Vector2( 804.181, 283.162 )
-value = 6
-
-[node name="Moeda2" parent="FundoPagina/QuadroArtico" instance=ExtResource( 5 )]
-position = Vector2( 1053.36, 405.866 )
-value = 6
-
-[node name="Moeda3" parent="FundoPagina/QuadroArtico" instance=ExtResource( 5 )]
-position = Vector2( 1053.36, 132.142 )
-value = 6
-
 [node name="CaixaTexto" parent="FundoPagina/QuadroArtico" instance=ExtResource( 3 )]
 margin_left = 24.0
 margin_top = 24.0
@@ -72,6 +60,18 @@ position = Vector2( 479.488, 309.866 )
 
 [node name="DogRun3" parent="FundoPagina/QuadroArtico" instance=ExtResource( 6 )]
 position = Vector2( 900.181, 664 )
+
+[node name="Moeda" parent="FundoPagina/QuadroArtico" instance=ExtResource( 5 )]
+position = Vector2( 804.181, 283.162 )
+value = 6
+
+[node name="Moeda2" parent="FundoPagina/QuadroArtico" instance=ExtResource( 5 )]
+position = Vector2( 1053.36, 405.866 )
+value = 6
+
+[node name="Moeda3" parent="FundoPagina/QuadroArtico" instance=ExtResource( 5 )]
+position = Vector2( 1053.36, 132.142 )
+value = 6
 
 [node name="Quadro" parent="FundoPagina" instance=ExtResource( 1 )]
 anchor_top = 1.0

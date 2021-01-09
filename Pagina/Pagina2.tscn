@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Pagina/Quadro.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Texturas/glitch-furniture/furniture_armchair_orange_hand_armchair.svg" type="Texture" id=2]
@@ -10,11 +10,10 @@
 [ext_resource path="res://icon.png" type="Texture" id=8]
 [ext_resource path="res://UI/PageTheme.tres" type="Theme" id=9]
 [ext_resource path="res://Pagina/CaixaTexto.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Materials/AlphaFase.tres" type="Material" id=11]
+[ext_resource path="res://Pagina/PuleAqui.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Texturas/farm tool icons outlined calciumtrice - backpack.png" type="Texture" id=12]
 [ext_resource path="res://Texturas/Bubble.svg" type="Texture" id=13]
 [ext_resource path="res://Pagina/NumeroPaginaDireita.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Pagina/BordaDeControlArea.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Pagina/Pagina.gd" type="Script" id=16]
 
 [node name="Pagina2" type="Control"]
@@ -228,34 +227,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PuleAqui" parent="FundoPagina/QuadroBoraLa" instance=ExtResource( 10 )]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -991.0
-margin_top = -91.0
-margin_right = -64.0
-margin_bottom = -32.0
-text = "*pule aqui com o botão espaço ou enter"
-align = 2
-
-[node name="GlowingRect" type="ColorRect" parent="FundoPagina/QuadroBoraLa/PuleAqui"]
-show_behind_parent = true
-material = ExtResource( 11 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -24.0
-margin_top = -24.0
-margin_right = 24.0
-margin_bottom = 24.0
-color = Color( 0.0509804, 1, 0.482353, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BordaDeControl" parent="FundoPagina/QuadroBoraLa/PuleAqui" instance=ExtResource( 15 )]
-controlPath = NodePath("../../../../../Pagina2/FundoPagina/QuadroBoraLa/PuleAqui/GlowingRect")
+[node name="PuleAqui" parent="FundoPagina/QuadroBoraLa" instance=ExtResource( 11 )]
+pagina_root_path = NodePath("../../..")
 
 [node name="NumeroPaginaDireita" parent="FundoPagina" instance=ExtResource( 14 )]
-[connection signal="player_pulou" from="FundoPagina/QuadroBoraLa/PuleAqui/BordaDeControl" to="." method="_pula_pagina"]
