@@ -6,7 +6,7 @@ export(float) var change_time = 1
 
 onready var sprite : AnimatedSprite = $AnimatedSprite
 var direction = Vector2.UP
-var timer = 0
+onready var timer = change_time
 
 func _ready():
     set_physics_process(true)

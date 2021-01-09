@@ -29,8 +29,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=6]
-radius = 128.0
-height = 32.0
+radius = 96.0
+height = 72.0
 
 [node name="Urso" type="KinematicBody2D"]
 collision_layer = 4
@@ -44,7 +44,6 @@ material = ExtResource( 3 )
 position = Vector2( 0, -128 )
 scale = Vector2( 15, 15 )
 frames = SubResource( 5 )
-frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -16, -16 )
