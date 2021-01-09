@@ -17,3 +17,4 @@ Ajude Molinha a encontrar dinheiro para comprar o presente mais maneiro!
 - Farming Tool Icons art by Calciumtrice: https://opengameart.org/content/farming-tool-icons
 - Alien art by [Carlos Alface](http://carlosalface.blogspot.pt/): https://opengameart.org/content/alien-1
 - Polar Bear Platformer art by [ZomBCool](https://opengameart.org/users/zombcool): https://opengameart.org/content/polar-bear-platformer
+- Sci Fi Level art by [Jeremy Gooch](https://jeremygooch.blogspot.com/): https://opengameart.org/content/sci-fi-level

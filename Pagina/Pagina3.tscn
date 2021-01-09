@@ -56,6 +56,17 @@ margin_bottom = 847.964
 text = "Além de tirar o sangue, inda mete a mão na carteira da gente"
 autowrap = true
 
+[node name="PuleAqui" parent="FundoPagina/QuadroViagem" instance=ExtResource( 7 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 959.0
+margin_bottom = 91.0
+pagina_root_path = NodePath("../../..")
+
 [node name="LazyMosquito" parent="FundoPagina/QuadroViagem" instance=ExtResource( 5 )]
 position = Vector2( 248.719, 1231.61 )
 
@@ -76,6 +87,7 @@ position = Vector2( 605.316, 907.974 )
 
 [node name="Moeda" parent="FundoPagina/QuadroViagem" instance=ExtResource( 6 )]
 position = Vector2( 466.671, 676.249 )
+value = 0
 
 [node name="Moeda2" parent="FundoPagina/QuadroViagem" instance=ExtResource( 6 )]
 position = Vector2( 1069.88, 1231.61 )
@@ -88,17 +100,6 @@ value = 1
 [node name="Moeda4" parent="FundoPagina/QuadroViagem" instance=ExtResource( 6 )]
 position = Vector2( 86.719, 1847.93 )
 value = 3
-
-[node name="PuleAqui" parent="FundoPagina/QuadroViagem" instance=ExtResource( 7 )]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 32.0
-margin_top = 32.0
-margin_right = 927.0
-margin_bottom = 59.0
-pagina_root_path = NodePath("../../..")
 
 [node name="NumeroPaginaEsquerda" parent="FundoPagina" instance=ExtResource( 11 )]
 text = "3"
