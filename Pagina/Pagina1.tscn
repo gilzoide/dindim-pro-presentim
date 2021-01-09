@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Pagina/Quadro.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Texturas/glitch-furniture/furniture_armchair_orange_hand_armchair.svg" type="Texture" id=2]
@@ -7,9 +7,16 @@
 [ext_resource path="res://Texturas/glitch-furniture/furniture_armchair_purple_journey_beanbag.svg" type="Texture" id=5]
 [ext_resource path="res://Texturas/glitch-furniture/furniture_ceilingdeco_bird_cage.svg" type="Texture" id=6]
 [ext_resource path="res://Texturas/glitch-furniture/furniture_largewindow.svg" type="Texture" id=7]
+[ext_resource path="res://icon.png" type="Texture" id=8]
+[ext_resource path="res://UI/PageTheme.tres" type="Theme" id=9]
 [ext_resource path="res://Pagina/CaixaTexto.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Materials/AlphaFase.tres" type="Material" id=11]
+[ext_resource path="res://Texturas/farm tool icons outlined calciumtrice - backpack.png" type="Texture" id=12]
+[ext_resource path="res://Texturas/Bubble.svg" type="Texture" id=13]
+[ext_resource path="res://Pagina/NumeroPaginaDireita.tscn" type="PackedScene" id=14]
 
 [node name="Pagina1" type="Control"]
+theme = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -18,22 +25,22 @@ __meta__ = {
 anchor_right = 0.0
 margin_right = 1280.0
 
-[node name="Quadro1" parent="FundoPagina" instance=ExtResource( 1 )]
-self_modulate = Color( 1, 0.968627, 0.584314, 1 )
+[node name="QuadroCasa" parent="FundoPagina" instance=ExtResource( 1 )]
+self_modulate = Color( 0.980392, 0.74902, 0.835294, 1 )
 anchor_right = 1.0
 margin_left = 32.0
 margin_top = 32.0
 margin_right = -32.0
 margin_bottom = 724.0
 
-[node name="CaixaTexto" parent="FundoPagina/Quadro1" instance=ExtResource( 10 )]
+[node name="CaixaTexto" parent="FundoPagina/QuadroCasa" instance=ExtResource( 10 )]
 margin_left = 24.0
 margin_top = 24.0
 margin_right = 919.0
 margin_bottom = 83.0
 text = "Deve ter alguma grana aqui em casa"
 
-[node name="CadeiraMao" type="TextureRect" parent="FundoPagina/Quadro1"]
+[node name="CadeiraMao" type="TextureRect" parent="FundoPagina/QuadroCasa"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 38.0
@@ -47,13 +54,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Moeda" parent="FundoPagina/Quadro1/CadeiraMao" instance=ExtResource( 3 )]
+[node name="Moeda" parent="FundoPagina/QuadroCasa/CadeiraMao" instance=ExtResource( 3 )]
 position = Vector2( 136.843, 188.011 )
 
-[node name="Sofa" type="TextureRect" parent="FundoPagina/Quadro1"]
-margin_left = 416.0
+[node name="Sofa" type="TextureRect" parent="FundoPagina/QuadroCasa"]
+margin_left = 433.513
 margin_top = 278.0
-margin_right = 1169.0
+margin_right = 1186.51
 margin_bottom = 690.0
 texture = ExtResource( 5 )
 expand = true
@@ -62,11 +69,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Moeda5" parent="FundoPagina/Quadro1/Sofa" instance=ExtResource( 3 )]
-position = Vector2( 745.074, -286.003 )
-value = 1
+[node name="Moeda5" parent="FundoPagina/QuadroCasa/Sofa" instance=ExtResource( 3 )]
+position = Vector2( 236.599, 215.738 )
+value = 3
 
-[node name="Lustre" type="TextureRect" parent="FundoPagina/Quadro1"]
+[node name="Lustre" type="TextureRect" parent="FundoPagina/QuadroCasa"]
 anchor_right = 1.0
 margin_left = 787.581
 margin_right = 47.5813
@@ -78,18 +85,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Moeda2" parent="FundoPagina/Quadro1/Lustre" instance=ExtResource( 3 )]
-position = Vector2( 209.276, 10.2461 )
+[node name="Moeda2" parent="FundoPagina/QuadroCasa/Lustre" instance=ExtResource( 3 )]
+position = Vector2( 209.276, -9.53674e-07 )
 
-[node name="Moeda3" parent="FundoPagina/Quadro1/Lustre" instance=ExtResource( 3 )]
-position = Vector2( 283.969, 55.2733 )
+[node name="Moeda3" parent="FundoPagina/QuadroCasa/Lustre" instance=ExtResource( 3 )]
+position = Vector2( 279.604, 44.5583 )
 value = 1
 
-[node name="Moeda4" parent="FundoPagina/Quadro1/Lustre" instance=ExtResource( 3 )]
-position = Vector2( -133.86, 490.86 )
-value = 3
+[node name="Moeda4" parent="FundoPagina/QuadroCasa/Lustre" instance=ExtResource( 3 )]
+position = Vector2( 379.969, -6.02476 )
 
-[node name="Window1" type="TextureRect" parent="FundoPagina/Quadro1"]
+[node name="Window1" type="TextureRect" parent="FundoPagina/QuadroCasa"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -101,8 +107,11 @@ margin_bottom = 51.5441
 texture = ExtResource( 7 )
 expand = true
 stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Window2" type="TextureRect" parent="FundoPagina/Quadro1"]
+[node name="Window2" type="TextureRect" parent="FundoPagina/QuadroCasa"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -118,15 +127,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Quadro2" parent="FundoPagina" instance=ExtResource( 1 )]
+[node name="QuadroMerreca" parent="FundoPagina" instance=ExtResource( 1 )]
 self_modulate = Color( 0.654902, 0.843137, 0.929412, 1 )
 anchor_right = 1.0
 margin_left = 32.0
-margin_top = 752.0
+margin_top = 756.0
 margin_right = -32.0
-margin_bottom = 1366.0
+margin_bottom = 1368.0
+rect_clip_content = true
 
-[node name="CaixaTexto" parent="FundoPagina/Quadro2" instance=ExtResource( 10 )]
+[node name="Boneco" type="TextureRect" parent="FundoPagina/QuadroMerreca"]
+margin_left = 300.817
+margin_top = 151.0
+margin_right = 857.817
+margin_bottom = 708.0
+rect_rotation = -7.98203
+rect_pivot_offset = Vector2( 278.5, 278.5 )
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CaixaTexto" parent="FundoPagina/QuadroMerreca" instance=ExtResource( 10 )]
 margin_left = 24.0
 margin_top = 24.0
 margin_right = 358.0
@@ -134,7 +158,7 @@ margin_bottom = 159.0
 text = "Só isso?
 Que merreca!"
 
-[node name="CaixaTexto2" parent="FundoPagina/Quadro2" instance=ExtResource( 10 )]
+[node name="CaixaTexto2" parent="FundoPagina/QuadroMerreca" instance=ExtResource( 10 )]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -144,3 +168,87 @@ margin_top = -83.0
 margin_right = -24.0
 margin_bottom = -24.0
 text = "Aí azedou o pé do frango =("
+
+[node name="!" type="Label" parent="FundoPagina/QuadroMerreca"]
+self_modulate = Color( 1, 0, 0, 1 )
+margin_left = 766.0
+margin_top = 24.0
+margin_right = 775.0
+margin_bottom = 77.0
+rect_scale = Vector2( 4, 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuadroBoraLa" parent="FundoPagina" instance=ExtResource( 1 )]
+self_modulate = Color( 1, 0.968627, 0.584314, 1 )
+anchor_right = 1.0
+margin_left = 32.0
+margin_top = 1400.0
+margin_right = -32.0
+margin_bottom = 1966.0
+
+[node name="CaixaTexto" parent="FundoPagina/QuadroBoraLa" instance=ExtResource( 10 )]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 893.0
+margin_bottom = 164.0
+text = "É, só tem um jeito de resolver isso:
+PARTIU AVENTURA!"
+
+[node name="BalaoMochila" type="TextureRect" parent="FundoPagina/QuadroBoraLa"]
+self_modulate = Color( 0.0509804, 1, 0.482353, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 482.0
+margin_top = 100.0
+margin_right = -129.0
+margin_bottom = -91.0
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mochila" type="TextureRect" parent="FundoPagina/QuadroBoraLa/BalaoMochila"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 40.0
+margin_bottom = -24.0
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PuleAqui" parent="FundoPagina/QuadroBoraLa" instance=ExtResource( 10 )]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -962.0
+margin_top = -91.0
+margin_right = -64.0
+margin_bottom = -32.0
+text = "pule aqui com o botão espaço ou enter"
+align = 1
+
+[node name="GlowingRect" type="ColorRect" parent="FundoPagina/QuadroBoraLa/PuleAqui"]
+show_behind_parent = true
+material = ExtResource( 11 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -24.0
+margin_top = -24.0
+margin_right = 24.0
+margin_bottom = 24.0
+color = Color( 0.0509804, 1, 0.482353, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NumeroPaginaDireita" parent="FundoPagina" instance=ExtResource( 14 )]

@@ -14,3 +14,4 @@ __meta__ = {
 
 [node name="Parede" parent="." instance=ExtResource( 1 )]
 controlPath = NodePath("..")
+width = 2.0

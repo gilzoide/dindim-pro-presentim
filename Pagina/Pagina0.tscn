@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Pagina/Quadro.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Texturas/Bubble.svg" type="Texture" id=2]
@@ -8,9 +8,12 @@
 [ext_resource path="res://Texturas/glitch-furniture/furniture_desk.svg" type="Texture" id=6]
 [ext_resource path="res://Pagina/Relogio.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Texturas/EmptyWallet.png" type="Texture" id=8]
+[ext_resource path="res://UI/PageTheme.tres" type="Theme" id=9]
 [ext_resource path="res://Pagina/CaixaTexto.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Pagina/NumeroPaginaEsquerda.tscn" type="PackedScene" id=11]
 
 [node name="Pagina0" type="Control"]
+theme = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -75,9 +78,10 @@ margin_bottom = 116.0
 
 [node name="QuadroRelogio" parent="FundoPagina" instance=ExtResource( 1 )]
 self_modulate = Color( 1, 0.968627, 0.584314, 1 )
+anchor_right = 1.0
 margin_left = 32.0
 margin_top = 756.0
-margin_right = 1248.0
+margin_right = -32.0
 margin_bottom = 1368.0
 
 [node name="furniture_desk_spaceship_desk2" type="TextureRect" parent="FundoPagina/QuadroRelogio"]
@@ -133,7 +137,7 @@ rect_scale = Vector2( 2, 2 )
 margin_left = 24.0
 margin_top = 24.0
 margin_right = 304.0
-margin_bottom = 229.0
+margin_bottom = 264.0
 text = "EITA, SÔ! JÁ É VÉSPERA DE NATAL!!!"
 autowrap = true
 
@@ -151,9 +155,10 @@ autowrap = true
 
 [node name="SemDindim" parent="FundoPagina" instance=ExtResource( 1 )]
 self_modulate = Color( 0.980392, 0.74902, 0.835294, 1 )
+anchor_right = 1.0
 margin_left = 32.0
-margin_top = 1399.0
-margin_right = 1248.0
+margin_top = 1400.0
+margin_right = -32.0
 margin_bottom = 1966.0
 
 [node name="Carteira" type="TextureRect" parent="FundoPagina/SemDindim"]
@@ -174,3 +179,5 @@ text = "CARACA MULEQUE!
 Era só que me faltava,
 não tenho um tostão sequer!
 =("
+
+[node name="NumeroPaginaEsquerda" parent="FundoPagina" instance=ExtResource( 11 )]

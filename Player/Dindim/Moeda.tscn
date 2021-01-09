@@ -3,10 +3,11 @@
 [ext_resource path="res://Texturas/gold-sheet.png" type="Texture" id=1]
 [ext_resource path="res://Player/Dindim/Dindim.gd" type="Script" id=2]
 [ext_resource path="res://Player/Dindim/GameplayScore.tres" type="Resource" id=3]
-[ext_resource path="res://Outline/OutlineMaterial.tres" type="Material" id=4]
+[ext_resource path="res://Materials/OutlineMaterial.tres" type="Material" id=4]
+
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 64, 64 )
+extents = Vector2( 96, 96 )
 
 [node name="Moeda" type="Area2D"]
 collision_layer = 32
@@ -15,7 +16,7 @@ score = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = ExtResource( 4 )
-scale = Vector2( 4, 4 )
+scale = Vector2( 6, 6 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 32, 32 )

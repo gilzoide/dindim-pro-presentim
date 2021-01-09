@@ -11,3 +11,4 @@ Jogo de amigo oculto, tomara que a pessoa goste!
 - Gold Treasure icons art by Clint Bellanger: https://opengameart.org/content/gold-treasure-icons
 - [Glitch](https://glitchthegame.com) Furniture art by Tiny Speck: https://opengameart.org/content/glitch-furniture-svg 
 - Cursed Timer ULiL font by Heaven Castro: https://www.fontspace.com/cursed-timer-ulil-font-f29411
+- Farming Tool Icons art by Calciumtrice: https://opengameart.org/content/farming-tool-icons

@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends CollisionObject2D
 
 export(NodePath) var controlPath
 export(float) var width = 1
@@ -19,7 +19,8 @@ func _ready():
     update_polygon()
 
 func _draw():
-    draw_rect(Rect2(Vector2.ZERO, control.rect_size), color, false, width)
+    if width > 0:
+        draw_rect(Rect2(Vector2.ZERO, control.rect_size), color, false, width)
 
 func _on_control_item_rect_changed():
     update_polygon()

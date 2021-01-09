@@ -12,6 +12,11 @@ enum Value {
     QUATRO,
     OITO,
     DEZESSEIS,
+    CALICE,
+    BARRAS,
+    BAU,
+    COROA,
+    TESOURO,
 }
 export(Value) var value setget set_value
 
@@ -19,7 +24,7 @@ var points = 1
 onready var sprite : Sprite = $Sprite
 
 func _ready() -> void:
-    points = 1 << value
+    set_value(value)
 
 func set_value(new_value):
     value = new_value
