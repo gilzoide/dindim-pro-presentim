@@ -6,6 +6,9 @@ export(Resource) var score
 export(float) var linearVelocity: float = 100
 export(bool) var start_pulando = true
 
+signal comecou_pular()
+signal terminou_pular()
+
 var direction = Vector2.ZERO
 var pulando = false
 var blinking = false
@@ -61,7 +64,10 @@ func _blink_ended():
 
 func _pulo_started():
     set_collision_mask_bit(INIMIGO_LAYER_BIT, false)
+    emit_signal("comecou_pular")
 
 func _pulo_ended():
+    yield(get_tree(), "idle_frame")
     set_collision_mask_bit(INIMIGO_LAYER_BIT, not blinking)
     pulando = false
+    emit_signal("terminou_pular")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Pagina/Quadro.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Texturas/glitch-furniture/furniture_armchair_orange_hand_armchair.svg" type="Texture" id=2]
@@ -14,9 +14,12 @@
 [ext_resource path="res://Texturas/farm tool icons outlined calciumtrice - backpack.png" type="Texture" id=12]
 [ext_resource path="res://Texturas/Bubble.svg" type="Texture" id=13]
 [ext_resource path="res://Pagina/NumeroPaginaDireita.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Pagina/BordaDeControlArea.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Pagina/Pagina.gd" type="Script" id=16]
 
-[node name="Pagina1" type="Control"]
+[node name="Pagina2" type="Control"]
 theme = ExtResource( 9 )
+script = ExtResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -230,12 +233,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -962.0
+margin_left = -991.0
 margin_top = -91.0
 margin_right = -64.0
 margin_bottom = -32.0
-text = "pule aqui com o botão espaço ou enter"
-align = 1
+text = "*pule aqui com o botão espaço ou enter"
+align = 2
 
 [node name="GlowingRect" type="ColorRect" parent="FundoPagina/QuadroBoraLa/PuleAqui"]
 show_behind_parent = true
@@ -251,4 +254,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="BordaDeControl" parent="FundoPagina/QuadroBoraLa/PuleAqui" instance=ExtResource( 15 )]
+controlPath = NodePath("../../../../../Pagina2/FundoPagina/QuadroBoraLa/PuleAqui/GlowingRect")
+
 [node name="NumeroPaginaDireita" parent="FundoPagina" instance=ExtResource( 14 )]
+[connection signal="player_pulou" from="." to="." method="_pula_pagina"]
+[connection signal="body_entered" from="FundoPagina/QuadroBoraLa/PuleAqui/BordaDeControl" to="." method="_on_Player_na_area"]
+[connection signal="body_exited" from="FundoPagina/QuadroBoraLa/PuleAqui/BordaDeControl" to="." method="_on_Player_fora_da_area"]

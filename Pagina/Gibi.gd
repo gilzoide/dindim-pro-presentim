@@ -4,12 +4,9 @@ export(float) var turn_duration = 1
 export(Array, PackedScene) var pages : Array = []
 
 onready var page_holder_left = $PageHolderLeft
-#onready var page_holder_left_viewport = $PageHolderLeft/Viewport
-#onready var page_holder_left_viewport_container = $PageHolderLeft/ViewportContainer
 onready var page_holder_right = $PageHolderRight
-#onready var page_holder_right_viewport = $PageHolderRight/Viewport
-#onready var page_holder_right_viewport_container = $PageHolderRight/ViewportContainer
 onready var tween = $Tween
+onready var player = $Player
 
 var page_left : Control = null
 var page_right : Control = null
@@ -19,9 +16,14 @@ func _ready():
     assert(pages.size() % 2 == 0, "Número de páginas deve ser par!!!")
     page_left = pages.pop_front().instance()
     page_holder_left.add_child(page_left)
+    player.global_position = page_left.player_position.global_position
 
     page_right = pages.pop_front().instance()
     page_holder_right.add_child(page_right)
+    page_right.connect("pula_pagina", self, "_pula_pagina")
+
+func _pula_pagina():
+    pass
 
 #    yield(get_tree().create_timer(2), "timeout")
 #    turn_page()

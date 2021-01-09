@@ -4,27 +4,28 @@
 [ext_resource path="res://Texturas/Bubble.svg" type="Texture" id=2]
 [ext_resource path="res://Texturas/glitch-furniture/furniture_bed_sloth_bed.svg" type="Texture" id=3]
 [ext_resource path="res://Pagina/FundoPagina.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Texturas/glitch-furniture/furniture_desk.svg" type="Texture" id=6]
 [ext_resource path="res://Pagina/Relogio.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Texturas/EmptyWallet.png" type="Texture" id=8]
 [ext_resource path="res://UI/PageTheme.tres" type="Theme" id=9]
 [ext_resource path="res://Pagina/CaixaTexto.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Pagina/NumeroPaginaEsquerda.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Pagina/Pagina.gd" type="Script" id=12]
 
-[node name="Pagina0" type="Control"]
+[node name="Pagina1" type="Control"]
 theme = ExtResource( 9 )
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+player_position_path = NodePath("FundoPagina/PlayerPosition2D")
 
 [node name="FundoPagina" parent="." instance=ExtResource( 4 )]
 anchor_right = 0.0
 margin_right = 1280.0
 
-[node name="Player" parent="FundoPagina" instance=ExtResource( 5 )]
-position = Vector2( 313.366, 479.488 )
-z_index = 100
+[node name="PlayerPosition2D" type="Position2D" parent="FundoPagina"]
+position = Vector2( 311.28, 481.846 )
 
 [node name="QuadroAcordando" parent="FundoPagina" instance=ExtResource( 1 )]
 self_modulate = Color( 0.654902, 0.843137, 0.929412, 1 )
